@@ -1,0 +1,11 @@
+.rotate-div {
+    width: 100%;
+    background-color: black;
+    animation-name: example;
+    animation-duration: 10s;
+}
+
+@keyframes example {
+    from {background-color: red;}
+    to {background-color: yellow;}
+}
