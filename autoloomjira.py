@@ -80,7 +80,7 @@ def clear_text_field():
 #start loom
 toaster = WindowsToaster('AutoLoomJira')
 newToast = Toast()
-newToast.text_fields = [f'AutoLoomJira is starting.\nTimer is set to {how_many_min} minutes.\n\nCODEDBAI']
+newToast.text_fields = [f'AutoLoomJira is starting.\nTimer is set to {how_many_min} minutes.\n\nCODED.BAI']
 toaster.show_toast(newToast)
 print("AutoLoomJira Booting...")
 
@@ -92,7 +92,7 @@ while True:
         if remaining == time_out:
             toaster = WindowsToaster('AutoLoomJira')
             newToast = Toast()
-            newToast.text_fields = [f'{time_out} seconds left. Please don\'t touch your keyboard.']
+            newToast.text_fields = [f'{time_out} seconds left. \nPlease don\'t touch your keyboard.']
             newToast.on_activated = lambda _: print('Toast clicked!')
             toaster.show_toast(newToast)
 
@@ -104,7 +104,7 @@ while True:
     # take screen shot
     toaster = WindowsToaster('AutoLoomJira')
     newToast = Toast()
-    newToast.text_fields = ['Time\'s up. Screenshotting now. Please don\'t touch your keyboard.']
+    newToast.text_fields = ['Time\'s up. Screenshotting now. \nPlease don\'t touch your keyboard.']
     toaster.show_toast(newToast)
 
     # Screenshot code ------------------------------------
@@ -201,6 +201,7 @@ while True:
     except TimeoutException:
         print("Comment box is already opened. Looking for save_button")
         save_button = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, '//button[@data-testid="comment-save-button"]')))
+        pyautogui.press('m') #dummydata
         clear_text_field()
 
     def save_comment_data():
