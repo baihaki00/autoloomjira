@@ -76,6 +76,7 @@ def clear_text_field():
 
 
 
+
 #start loom
 toaster = WindowsToaster('AutoLoomJira')
 newToast = Toast()
